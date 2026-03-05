@@ -1,12 +1,14 @@
 // next.config.mjs
 import nextra from 'nextra'
- 
-// Set up Nextra with its configuration
-const withNextra = nextra({
-  // ... Add Nextra-specific options here
-})
- 
-// Export the final Next.js config with Nextra included
-export default withNextra({
-  // ... Add regular Next.js options here
-})
+import type { NextConfig } from 'next'
+
+const withNextra = nextra({})
+
+const nextConfig: NextConfig = {
+  output: 'export',
+  images: {
+    unoptimized: true
+  }
+}
+
+export default withNextra(nextConfig)
