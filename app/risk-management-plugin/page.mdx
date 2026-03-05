@@ -1,0 +1,96 @@
+---
+title: Risk Management Plugin
+---
+
+## **Strategy Genesis - Risk Management Plugin**
+
+The "Strategy Genesis - Risk Management Plugin" is a pine script designed to take care of risk management. In order to use this plugin, you should already have another indicator that produces buy/sell signals. That indicator may be "Strategy Genesis" or any other indicator that produces buy/sell signals. Once your indicator is ready, connect it to "Strategy Genesis - Risk Management Plugin". The plugin receives the signals from your indicator, enters the trades, handles order size, money management, time filter, layering, tp/sl, and other risk management functionalities. 
+
+## **Settings**
+
+### **General**
+
+Setting the signal source and trade direction. 
+
+*   **Signal Source:** The source of buy/sell signals. Default is "**Double SMA (Test)**". 
+*   **Double SMA (Test):** Produce buy/sell signals by an internal Double SMA strategy (useful for testing the risk plugin) 
+*   **External Indicator:** Receive buy/sell signals from an external indicator 
+*   **Long:** The long signal from an external indicator. 
+*   **Short:** The short signal from an external indicator. 
+*   **Allowed Directions:** The allowed direction(s) of trade, Default is "Both". 
+*   **Only Long:** Only enact long signals 
+*   **Only Short:** Only enact short signals 
+*   **Both:** Enact both the long and short signals 
+
+### **Base Order Size**
+
+Defining the base order size. This will be used for entering the main trade. If Layering is enabled, the order size of layering entries will be multiples of base order size. 
+
+*   **Base Order Size Type:** Type of base order sizing. Default is "Risk". 
+*   **Contracts**: Calculate entry order size based on the number of contracts 
+*   **Cash**: Calculate entry order size based on the amount of cash that is used to buy the contracts 
+*   **Percentage of Equity:** Calculate entry order size based on the percentage of your equity you are going to use to buy the contracts 
+*   **Risk:** Calculate entry order size based on the percentage of your equity you are willing to lose in case no layer is opened and sl is hit 
+*   **Contracts:** Number of contracts. Default is "1". 
+*   **Cash**: The amount of cash. Default is "1000". 
+*   **Invested Percentage of Equity:** The percentage of equity that will be used to open each trade. Default is "2". 
+*   **Risk (%):** The percentage of equity that will be risked in each trade. If no layer is opened and SL is hit, this percentage of equity will be lost. Default is "2". 
+*   **Leverage:** The order size will be multiplied by leverage. Leverage is only used for 'Cash' and 'Invested Percentage of Equity' order size types. Default is "1". 
+
+### **Base TP/SL**
+
+Specifying take profit and stop loss. It is called "Base" because the TP may be moved later by layering. 
+
+*   **Base TP/SL Type:** The method for calculating TP/SL. Default is "Fixed ATR". 
+*   **Raw Price Distance:** Place sl in a specific price distance from the entry 
+*   **Price Percentage:** Place sl in a specific percentage of the entry 
+*   **Swing:** Place sl based on swing points 
+*   **Fixed ATR:** Place sl based on ATR and ATR multiplier 
+*   **Reward/risk ratio:** The SL is calculated by the inputs below, and TP is calculated using the Reward/risk ratio. Default is 1.5. 
+*   **SL:** Stop loss (in case 'Raw Price Distance' type is used). Default is "1". 
+*   **SL (%):** Stop loss percentage (in case 'Price Percentage' type is used). Default is "1". 
+*   **SL Swing Lookback**: The swing lookback used to calculate stop loss (in case 'Swing' type is used). Default is "10". 
+*   **Min SL:** Minimum stop loss (raw price distance) to be used in case the swing SL is too low (in case 'Swing' type is used). Default is "1". 
+*   **ATR Length:** ATR length for calculating SL (in case 'Fixed ATR' type is used). Default is "14". 
+*   **ATR Multiplier for SL:** ATR multiplier for calculating SL (in case 'Fixed ATR' type is used). Default is "6". 
+
+### **Hedging**
+
+Specifying the type of Layering to be used. 
+
+*   **Mode**: The risk mode to be used. Default is "No Hedging". 
+*   **No Hedging:** No layering will be used 
+*   **Dynamic Layering:** Layers will be opened when we receive further signals from the indicator and the distance from the previous entry is higher than a threshold 
+*   **Static Layering:** Layers will be opened on fixed distances from the entry 
+*   **Distances Unit:** The unit for measuring distances between layers. Default is "1 ATR". 
+*   **1 Unit Price:** Use raw price as the unit of distance between layers 
+*   **1% of Price:** Use 1% of close price as the unit of distance between layers 
+*   **1 ATR:** Use 1 ATR as the unit of distance between layers 
+*   **ATR Length**: The ATR length for '1 ATR' distance type. Default is "14". 
+*   **Distance (between all dynamic layers):** Distance between the layers for Dynamic Layering. Default is "1". 
+*   **Layer 1 toggle:** Enable/disable Layer 1 for Dynamic or Static Layering. 
+*   **Layer 1 Volume:** The order multiplier for Layer 1. For example, if the multiplier is 1.5, then Layer 1 will be opened with a size of 1.5 multiplied by base order size 
+*   **Layer 1 Distance:** The distance of Layer 1 from the main entry (only for Static Layering) 
+*   **Layer 1 TP Move:** Lower down the TP by this amount once Layer 1 is hit 
+*   **Other Layers'** inputs are the similar to Layer 1. 
+
+### **Time Filter**
+
+Disable trading based on time session. 
+
+*   **Only Trade on Following Sessions:** Enable time filter. It is enabled by default. 
+*   **Monday toggle:** Allow trading on Monday. 
+*   **Monday Session 1:** first trading session on Monday. 
+*   **Monday Session 2:** second trading session on Monday. 
+*   **Monday Session 3:** third trading session on Monday. 
+*   **The inputs for other days** of week are similar to the inputs for Monday. 
+
+### **Cutoff/Cutloss Filter**
+
+Disable trading based on daily profit. 
+
+*   **Daily Cutoff (%):** Neglect further signals during the day if the daily profit percentage exceeds this ammount. Default is "5". 
+*   **Daily Cutoff - Force Close:** Close all open trades once the daily profit percentage exceeds the threshold. It is enabled by default. 
+*   **Daily Cutloss (%):** Neglect further signals during the day if the daily loss percentage exceeds this ammount. Default is "-5". 
+*   **Daily Cutoff - Force Close:** Close all open trades once the daily loss percentage exceeds the threshold. It is enabled by default. 
+*   **Daily Reset Timestamp (GMT):** The time of the day that marks the new day. Default is "22:00".

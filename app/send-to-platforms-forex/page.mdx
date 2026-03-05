@@ -1,0 +1,105 @@
+---
+title: Send To Platforms – Forex
+---
+
+The **Send To Platforms** feature allows you to forward your trading signals from **ChartsConnect** directly to supported trading platforms.
+
+For Forex traders, ChartsConnect provides a dedicated **Expert Advisor (EA)** that connects with **MetaTrader** using your **Forex Token**.
+
+### **Step 1: Generate Your Forex Token on ChartsConnect**
+
+*   Log in to your **ChartsConnect** account.
+*   Go to the **Send To Platforms** section.
+*   Open the **Forex** page.
+*   Add a name and click on **“Create EA Token”** to create your unique **Forex Token**.
+*   Select the token as Send To in the master token page
+*   Copy the generated token — you will use it inside MetaTrader to link your account.
+
+Each Forex Token is unique to your user account and identifies your trading connection with MetaTrader.
+
+### **Step 2: ChartsConnect Expert Advisor (EA)**
+
+*   Open your **MetaTrader** application.
+*   In the **Navigator** panel, find **Expert Advisors**.
+*   Find the **ChartsConnect EA** in your Expert Advisors list.
+
+### **Step 3: Add the EA to Your Chart**
+
+*   Drag and drop the **ChartsConnect EA** onto the chart you wish to automate.
+*   When prompted, open the **Inputs** tab (or **Common** settings, depending on your MetaTrader version).
+*   Fill in the following fields:
+
+**Token****:** Paste your **Forex Token** (from ChartsConnect)
+
+**Username****:** Enter your **ChartsConnect registered email address**
+
+**URL****:** https://chartsconnect.com
+
+*   Click **OK** to save and activate the EA.
+
+### **Step 4: Confirm the Connection**
+
+Once setup is complete:
+
+*   The EA will automatically connect to your **ChartsConnect account** using your token and email.
+*   You’ll see a confirmation message or indicator on your chart showing **Connected**
+*   Any valid signals received from ChartsConnect will now execute in your MetaTrader account automatically.
+
+### **Manage or Revoke Access**
+
+You can manage your Forex tokens anytime from your **ChartsConnect Forex page**:
+
+*   **View existing tokens**
+*   **Regenerate** or **delete** tokens
+*   **Disable** MetaTrader access instantly for security or turn off Algo Trading if needed.
+
+## **Forex Token Add Alternative**
+
+#### **Add Forex Tokens via Master Token Page**
+
+In addition to creating Forex tokens directly from the **Forex page**, you can also create and manage them through the **Master Token** page.
+
+This method is especially useful when you’re already managing your main trading tokens and want to link them to your **MetaTrader Expert Advisor (EA)** quickly.
+
+### **Step 1: Go to the Master Token Page**
+
+*   Log in to your **ChartsConnect** account.
+*   Navigate to the **Master Token** section from your dashboard.
+*   You will see a list of all your existing **Master Tokens** (used for TradingView and other integrations).
+
+### **Step 2: Click + “Send To” Against a Master Token**
+
+Each Master Token entry has a **Send To** column.
+
+*   Locate the token you want to connect with Forex.
+*   Click the + under **Send To** column.
+*   A popup will open showing available platform options.
+
+### **Step 3: Select “Forex”**
+
+In the popup, choose **Forex** as the platform you want to connect this Master Token to.
+
+This action links your TradingView signals (or other sources using this token) with your MetaTrader Forex connection.
+
+### **Step 4: Choose or Create a Forex Token**
+
+After selecting **Forex**, a new popup will appear listing your existing **Forex Tokens**.
+
+You’ll see:
+
+*   A list of all previously created Forex tokens
+*   A **Create EA** button to generate a new token if needed
+
+**Options available:**
+
+*   **Select an existing Forex Token** to use it for this Master Token.
+*   **Click “Create EA”** to generate a new token for your Forex connection.
+*   The new token will automatically appear in your list once created.
+*   You can then assign it to your Master Token directly from this popup.
+
+### **Step 5: Confirm and Link**
+
+Once you’ve selected or created a Forex token:
+
+*   Click **OK** in the popup.
+*   The selected Forex Token will now be linked to the chosen Master Token.

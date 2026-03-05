@@ -1,0 +1,156 @@
+---
+title: Connect Accounts
+---
+
+## **MetaTrader 5 Setup Guide**
+
+This guide will walk you through setting up the **ChartsConnect Expert Advisor (EA)** on your **MetaTrader 5** platform. Please follow the step-by-step instructions below.
+
+## **Download ChartsConnect EA**
+
+*   Navigate to [ChartsConnect](https://chartsconnect.com/get-charts-connect).
+*   Click "Download."
+
+![](https://media.chartsconnect.com/uploads/documentation/1763012631254-2b44df43-6dad-4c2f-99ff-45322d03ebb8.jpeg)
+
+## **Access the Experts Folder**
+
+The "Experts" folder is where MetaTrader 5 stores Expert Advisors (automated trading programs).
+
+*   In the upper-left corner of your MetaTrader 5 platform, click **File → Open Data Folder**.
+*   In the Data Folder that opens, click into the **MQL5** folder.
+*   Inside the MQL5 folder, click into the **Experts** folder.
+
+![](https://media.chartsconnect.com/uploads/documentation/1763012726990-ea5a9577-b5ea-46a1-b587-3a56c28cfdbf.png)
+
+  
+
+![](https://media.chartsconnect.com/uploads/documentation/1763013152305-eafae8bb-27c5-4bc8-ae57-3049d82ab68e.png)
+
+## **Add ChartsConnect Files to the Experts Folder**
+
+*   In your Experts folder, extract the contents of the .zip file you downloaded in Step 1.
+*   Ensure the following folder and files are placed directly into the Experts folder:
+*   ChartsConnect\_AlertBased.ex5
+*   ChartsConnect\_Normal.ex5
+*   ChartsConnect\_Simple.ex5
+*   ChartsConnect\_CustomLayering.ex5
+*   ChartsConnect\_DynamicLayering.ex5
+*   DLL\\chartsconnectlib.dll
+*   DLL\\libcrypto-3-x64.dll
+*   DLL\\libssl-3-x64.dll
+*   DLL\\libwebsockets.dll
+*   Any additional library files included in the package
+
+![](https://media.chartsconnect.com/uploads/documentation/1763013259275-69484938-520a-4072-917c-27f617d71453.png)
+
+![](https://media.chartsconnect.com/uploads/documentation/1763013328459-6d5ed0c9-a793-4fc3-bc70-de014e93620d.jpeg)
+
+![](https://media.chartsconnect.com/uploads/documentation/1763013396491-7eff7f13-2ef9-4f94-8255-f57a8d8807de.png)
+
+## **Allow Algorithmic Trading and DLL Imports in MetaTrader 5**
+
+*   At the top of your MetaTrader 5 platform, click **Tools → Options**.
+*   Go to the **Expert Advisors** tab.
+*   Tick '**Allow Algorithmic Trading'** and '**Allow DLL imports'**.
+*   Click **OK**.
+
+![](https://media.chartsconnect.com/uploads/documentation/1763013461084-38d52008-3c65-472e-8369-48b5ac1d47c4.png)
+
+![](https://media.chartsconnect.com/uploads/documentation/1763013511991-588a8f53-d509-4419-bf22-568758bb801f.png)
+
+## **Enable Algo Trading**
+
+*   In the MetaTrader 5 toolbar (at the top of the terminal), locate the **Algo Trading** button.
+*   If the button is red, click it to enable algorithmic trading. The button should turn green, indicating it's active.
+
+![](https://media.chartsconnect.com/uploads/documentation/1763013580061-42de3552-de50-427b-a7df-2031c6588d08.png)
+
+## **Attach ChartsConnect EA to a Chart**
+
+*   Open the Navigator panel in MetaTrader 5 by pressing Ctrl+N (or by clicking **View → Navigator**).
+*   In the Navigator panel, right-click on **Expert Advisors**.
+*   Click **Refresh**.
+*   Locate the ChartsConnect MT5 EA in the list, right-click on it, and select 'Attach to Chart'. Choose any chart.
+
+![](https://media.chartsconnect.com/uploads/documentation/1763013649356-190a7db5-5111-483f-92d7-a90613e90a9c.jpeg)
+
+![](https://media.chartsconnect.com/uploads/documentation/1763013709862-09d76619-7fb7-45af-bf4e-871b5edf32bc.png)
+
+**Do I need to attach the ChartsConnect EA to every chart if I want to trade multiple symbols?**
+
+Yes, ChartsConnect works on a per-symbol basis. Each instance of the EA monitors and executes trades only for the symbol of the chart to which it's attached. If you want to trade multiple symbols (for example, EURUSD, GBPUSD, and XAUUSD), you'll need to attach a separate instance of the ChartsConnect EA to a chart for each symbol.
+
+**Example Setup:**
+
+*   Attach ChartsConnect EA to the EURUSD chart → trades EURUSD signals
+*   Attach ChartsConnect EA to the GBPUSD chart → trades GBPUSD signals
+*   Attach ChartsConnect EA to the XAUUSD chart → trades XAUUSD signals
+
+Each EA instance maintains its own connection, dashboard, and alert queue for its specific symbol. You can use any timeframe for the chart - the timeframe doesn't affect signal reception, only the symbol matters.
+
+## **Configure EA Settings**
+
+A properties window for the EA will appear.
+
+*   Under the **Common** tab, ensure **Allow Algo Trading** is ticked.
+*   Under the **Dependencies** tab, ensure **Allow DLL imports** is ticked.
+
+![](https://media.chartsconnect.com/uploads/documentation/1763013840349-48f67d33-b3be-495b-bf98-166404802af0.png)
+
+![](https://media.chartsconnect.com/uploads/documentation/1763013957927-00162155-cfe9-4a07-9db3-85b1e8f42502.png)
+
+## **Input Your License Key and Configuration**
+
+*   Access [**Send-To platforms**](https://chartsconnect.com/app/forex) in the ChartsConnect Portal and copy your Token (create a new one if nothing exists).
+*   Open the **Inputs** tab in the EA properties window.
+*   Enter your Username/Email in the **Username** field.
+*   Paste your Token into the **Token** field.
+*   Click **OK**. The EA will now attempt to establish a connection.
+
+![](https://media.chartsconnect.com/uploads/documentation/1763014069688-674c030a-abce-4d1b-a347-3f3e7220a0aa.jpeg)
+
+![](https://media.chartsconnect.com/uploads/documentation/1763014132964-ca1978c1-ae64-4a6b-aded-7b085c2539df.png)
+
+**Can I use my ChartsConnect license on different trading accounts?**
+
+Yes, absolutely! ChartsConnect provides flexible licensing. This means you're free to connect to any trading account you choose – whether it's Demo or Live, or even a Prop account. Just ensure you're not exceeding your license's concurrent connection limit.
+
+## **Verify Connection Status**
+
+Once connected, you should see confirmation in the EA's Expert tab in MetaTrader 5.
+
+*   Navigate to the **Toolbox** panel at the bottom of MT5 (press Ctrl+T if hidden).
+*   Click on the **Experts** tab.
+*   Look for connection confirmation messages from ChartsConnect EA.
+
+![](https://media.chartsconnect.com/uploads/documentation/1763014233501-1e6f7666-7d02-4ca5-a923-f70ff59d5774.png)
+
+You should see messages like:
+
+*   "ChartsConnect EA initialized successfully"
+*   "WebSocket connection established"
+*   "Connected to ChartsConnect server"
+
+## **Understanding the Dashboard**
+
+Once connected, the ChartsConnect EA will display a modern dashboard on your chart showing:
+
+*   **Connection Status**: Real-time WebSocket connection indicator
+*   **AI Validation Scores**: Probability scores for incoming signals (if enabled)
+*   **Alert Queue**: Pending signals awaiting review or execution
+*   **Execution Controls**: Manual execution buttons for queued alerts
+
+## **All done with the MT5 setup!**
+
+Next, let's try sending a few test signals to confirm your setup is running smoothly. Check out our Testing Your Connection guide to learn how to send test alerts from TradingView or other sources.
+
+## **Troubleshooting**
+
+### **EA Not Connecting?**
+
+*   Verify your Email/Token is correct
+*   Check that Algo Trading is enabled (green button in toolbar)
+*   Ensure DLL imports are allowed in Options
+*   Check the Experts tab for error messages
+*   Verify your firewall isn't blocking the connection
