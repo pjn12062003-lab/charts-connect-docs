@@ -21,8 +21,8 @@ const tocExtra = (
   <div className="nx-mt-6 nx-text-sm">
     <ul className="nx-space-y-1">
       <li>
-        <a href="https://chartsconnect.com" target="_blank">
-          Charts Connect
+        <a href="https://chartsconnect.com/app/dashboard" target="_blank">
+          Charts Connect Dashboard
         </a>
       </li>
     </ul>
@@ -45,6 +45,10 @@ export default async function RootLayout({
           pageMap={await getPageMap()}
           footer={footer}
           toc={{ extraContent: tocExtra }}
+          feedback={{ 
+            content: "Charts Connect",
+            link: "https://chartsconnect.com"
+          }}
           editLink= ''
         >
           {children}
