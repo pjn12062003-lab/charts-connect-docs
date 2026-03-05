@@ -1,15 +1,8 @@
 ---
-title: Project Guide Overview
-description: Learn how to effectively use this awesome project with our comprehensive guide.
-asIndexPage: true
+title: Home
+sidebar: false
 ---
-import { Cards, Card } from 'nextra/components'
 
-# Project Guide
+import { redirect } from 'next/navigation'
 
-This guide covers all the main features and provides instructions on how to get started and use the project effectively.
-
-<Cards>
-  <Card title="Installation Steps" href="./guide/installation/" arrow={true} />
-  <Card title="Core Features" href="./guide/features/" arrow={true} />
-</Cards>
+{redirect('/getting-started')}
