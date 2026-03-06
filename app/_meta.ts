@@ -10,6 +10,9 @@ export default {
   "risk-management-plugin": "Risk Management Plugin",
   "send-to-platforms-forex": "Send To Platforms - Forex",
   "refer-and-earn": "Refer and Earn",
-  "ai-chat-bot": "AI Chat Bot",
+  "ai-chat-bot": {
+    display: "hidden",
+    title: "AI Chat Bot"
+  },
   "ai-trade-validator": "AI Trade Validator",
 }
