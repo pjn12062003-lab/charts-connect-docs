@@ -4,11 +4,11 @@ title: Connect Accounts
 
 ## **MetaTrader 5 Setup Guide**
 
-This guide will walk you through setting up the **ChartsConnect Expert Advisor (EA)** on your **MetaTrader 5** platform. Please follow the step-by-step instructions below.
+This guide will walk you through setting up the **Charts Connect Expert Advisor (EA)** on your **MetaTrader 5** platform. Please follow the step-by-step instructions below.
 
-## **Download ChartsConnect EA**
+## **Download Charts Connect EA**
 
-*   Navigate to [ChartsConnect](https://chartsconnect.com/get-charts-connect).
+*   Navigate to [Charts Connect](https://chartsconnect.com/get-charts-connect).
 *   Click "Download."
 
 ![](https://media.chartsconnect.com/uploads/documentation/1763012631254-2b44df43-6dad-4c2f-99ff-45322d03ebb8.jpeg)
@@ -27,7 +27,7 @@ The "Experts" folder is where MetaTrader 5 stores Expert Advisors (automated tra
 
 ![](https://media.chartsconnect.com/uploads/documentation/1763013152305-eafae8bb-27c5-4bc8-ae57-3049d82ab68e.png)
 
-## **Add ChartsConnect Files to the Experts Folder**
+## **Add Charts Connect Files to the Experts Folder**
 
 *   In your Experts folder, extract the contents of the .zip file you downloaded in Step 1.
 *   Ensure the following folder and files are placed directly into the Experts folder:
@@ -66,26 +66,26 @@ The "Experts" folder is where MetaTrader 5 stores Expert Advisors (automated tra
 
 ![](https://media.chartsconnect.com/uploads/documentation/1763013580061-42de3552-de50-427b-a7df-2031c6588d08.png)
 
-## **Attach ChartsConnect EA to a Chart**
+## **Attach Charts Connect EA to a Chart**
 
 *   Open the Navigator panel in MetaTrader 5 by pressing Ctrl+N (or by clicking **View → Navigator**).
 *   In the Navigator panel, right-click on **Expert Advisors**.
 *   Click **Refresh**.
-*   Locate the ChartsConnect MT5 EA in the list, right-click on it, and select 'Attach to Chart'. Choose any chart.
+*   Locate the Charts Connect MT5 EA in the list, right-click on it, and select 'Attach to Chart'. Choose any chart.
 
 ![](https://media.chartsconnect.com/uploads/documentation/1763013649356-190a7db5-5111-483f-92d7-a90613e90a9c.jpeg)
 
 ![](https://media.chartsconnect.com/uploads/documentation/1763013709862-09d76619-7fb7-45af-bf4e-871b5edf32bc.png)
 
-**Do I need to attach the ChartsConnect EA to every chart if I want to trade multiple symbols?**
+**Do I need to attach the Charts Connect EA to every chart if I want to trade multiple symbols?**
 
-Yes, ChartsConnect works on a per-symbol basis. Each instance of the EA monitors and executes trades only for the symbol of the chart to which it's attached. If you want to trade multiple symbols (for example, EURUSD, GBPUSD, and XAUUSD), you'll need to attach a separate instance of the ChartsConnect EA to a chart for each symbol.
+Yes, Charts Connect works on a per-symbol basis. Each instance of the EA monitors and executes trades only for the symbol of the chart to which it's attached. If you want to trade multiple symbols (for example, EURUSD, GBPUSD, and XAUUSD), you'll need to attach a separate instance of the Charts Connect EA to a chart for each symbol.
 
 **Example Setup:**
 
-*   Attach ChartsConnect EA to the EURUSD chart → trades EURUSD signals
-*   Attach ChartsConnect EA to the GBPUSD chart → trades GBPUSD signals
-*   Attach ChartsConnect EA to the XAUUSD chart → trades XAUUSD signals
+*   Attach Charts Connect EA to the EURUSD chart → trades EURUSD signals
+*   Attach Charts Connect EA to the GBPUSD chart → trades GBPUSD signals
+*   Attach Charts Connect EA to the XAUUSD chart → trades XAUUSD signals
 
 Each EA instance maintains its own connection, dashboard, and alert queue for its specific symbol. You can use any timeframe for the chart - the timeframe doesn't affect signal reception, only the symbol matters.
 
@@ -102,7 +102,7 @@ A properties window for the EA will appear.
 
 ## **Input Your License Key and Configuration**
 
-*   Access [**Send-To platforms**](https://chartsconnect.com/app/forex) in the ChartsConnect Portal and copy your Token (create a new one if nothing exists).
+*   Access [**Send-To platforms**](https://chartsconnect.com/app/forex) in the Charts Connect Portal and copy your Token (create a new one if nothing exists).
 *   Open the **Inputs** tab in the EA properties window.
 *   Enter your Username/Email in the **Username** field.
 *   Paste your Token into the **Token** field.
@@ -112,9 +112,9 @@ A properties window for the EA will appear.
 
 ![](https://media.chartsconnect.com/uploads/documentation/1763014132964-ca1978c1-ae64-4a6b-aded-7b085c2539df.png)
 
-**Can I use my ChartsConnect license on different trading accounts?**
+**Can I use my Charts Connect license on different trading accounts?**
 
-Yes, absolutely! ChartsConnect provides flexible licensing. This means you're free to connect to any trading account you choose – whether it's Demo or Live, or even a Prop account. Just ensure you're not exceeding your license's concurrent connection limit.
+Yes, absolutely! Charts Connect provides flexible licensing. This means you're free to connect to any trading account you choose – whether it's Demo or Live, or even a Prop account. Just ensure you're not exceeding your license's concurrent connection limit.
 
 ## **Verify Connection Status**
 
@@ -122,19 +122,19 @@ Once connected, you should see confirmation in the EA's Expert tab in MetaTrader
 
 *   Navigate to the **Toolbox** panel at the bottom of MT5 (press Ctrl+T if hidden).
 *   Click on the **Experts** tab.
-*   Look for connection confirmation messages from ChartsConnect EA.
+*   Look for connection confirmation messages from Charts Connect EA.
 
 ![](https://media.chartsconnect.com/uploads/documentation/1763014233501-1e6f7666-7d02-4ca5-a923-f70ff59d5774.png)
 
 You should see messages like:
 
-*   "ChartsConnect EA initialized successfully"
+*   "Charts Connect EA initialized successfully"
 *   "WebSocket connection established"
-*   "Connected to ChartsConnect server"
+*   "Connected to Charts Connect server"
 
 ## **Understanding the Dashboard**
 
-Once connected, the ChartsConnect EA will display a modern dashboard on your chart showing:
+Once connected, the Charts Connect EA will display a modern dashboard on your chart showing:
 
 *   **Connection Status**: Real-time WebSocket connection indicator
 *   **AI Validation Scores**: Probability scores for incoming signals (if enabled)
