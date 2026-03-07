@@ -16,7 +16,11 @@ export const metadata = {
 const banner = <Banner storageKey="some-key">Charts Connect Documentation</Banner>
 
 const navbar = (
-  <Navbar logo={<b>Charts Connect</b>} />
+  <Navbar
+    logo={
+      <img src="/charts_connect.png" alt="Charts Connect" style={{ height: "60px" }} />
+    }
+  />
 )
 
 const footer = <Footer>{new Date().getFullYear()} © Charts Connect.</Footer>

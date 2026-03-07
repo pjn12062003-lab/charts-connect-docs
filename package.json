@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
+    "postbuild": "pagefind --site out --output-path out/_pagefind && cp -r ./out/_pagefind ./public",
     "start": "next start",
     "lint": "next lint"
   },
@@ -24,6 +24,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "pagefind": "^1.4.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
