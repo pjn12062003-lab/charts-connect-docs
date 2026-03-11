@@ -1,0 +1,313 @@
+---
+title: Beginner Flow 
+description: Complete step-by-step guide to set up your first trading automation with Charts Connect
+---
+
+# Trading Automation Setup Guide
+
+This guide walks you through creating your first automated trading setup with Charts Connect. Follow each step carefully to connect your TradingView strategies to your MetaTrader 5 account.
+
+> [!NOTE]
+>
+> **PRE-STEP: Verify Your Dashboard**
+>
+> Before creating a new automation, confirm your Charts Connect Dashboard is accessible and your Forex target accounts are visible. The Dashboard provides a real-time status overview of all your automations.
+
+<Steps>
+
+### Create New Automation
+
+**Launch the Automation Wizard from the sidebar**
+
+1. Click the **"+ Create New Automation"** link in the top-left sidebar of Charts Connect
+
+![Create New Automation button in sidebar](https://media.chartsconnect.com/uploads/howitworks/1772863358922-71a072d0-b54d-4307-b02d-9dde8322fda4.jpg)
+
+2. This opens the New Trading Automation wizard at Step 1 of 5
+
+**Choose Your Automation Mode**
+
+You have two options:
+
+- **Simple Mode (Recommended)** - Select this option to pick a pre-built strategy from the Charts Connect library. Best for most users.
+- **Advanced Mode** - Use this if you want to integrate your own TradingView alerts or custom webhook signals.
+
+![Automation mode selection screen](https://media.chartsconnect.com/uploads/howitworks/1772863682214-9d3fee09-63d7-4a80-8cb8-1f5a444613bd.jpg)
+
+For this guide, select **Simple Mode**, then click the **Continue** button to proceed.
+
+### Choose Your Trade Signal
+
+**Browse and select your strategy, pair, and timeframe**
+
+The signal library displays all available strategies as cards with chart previews. You can scroll through the grid or use the Search bar to find a specific strategy. Toggle to List view for a compact display.
+
+**Selecting the Smart Money Flow Cloud Strategy:**
+
+1. Locate **'Smart Money Flow Cloud (Pullback Strategy)'** in the strategy list
+2. Click the strategy card or expand its list to see all available pairs
+3. Tick the checkbox next to: **XAUUSD • M15 • Blueberry**
+
+![Smart Money Flow Cloud strategy selection](https://media.chartsconnect.com/uploads/howitworks/1772863928558-3eb274bd-5f0d-4fca-92dd-71b5fc9277ee.jpg)
+
+4. Click the **Next →** button (bottom right) to proceed to Step 3
+
+### Select Targets
+
+**Choose where trade signals will be sent**
+
+Step 3 of 5 asks you to select one or more target destinations for your trade signals. Four target types are available: Crypto, Discord, Forex, and Telegram.
+
+**Target Selection Steps:**
+
+1. Review available targets - Crypto, Discord, Forex, Telegram are shown as checkboxes
+2. Check the **Forex** checkbox
+3. A sub-label **'Create EA Token name'** appears beneath it
+4. Click **Create EA Token** button
+
+![Target selection screen with Forex option](https://media.chartsconnect.com/uploads/howitworks/1772864120117-e2049bf1-25e2-42b7-a8fb-0180e793c1ab.jpg)
+
+**Setting Up the Forex Send-To Account:**
+
+If prompted to specify the destination Forex account, a dialog appears:
+
+1. **Name This Account field** - Type a friendly name for the new token (e.g., `Demo EA Flow`)
+
+![Create EA Token dialog](https://media.chartsconnect.com/uploads/howitworks/1772864359750-fdc89290-55fc-4871-8799-1d9da3fbd855.jpg)
+
+2. Click **'+ Create EA Token'** - Generates a new token and adds it to the list
+3. **Select existing account** - Tick 'Demo EA Flow' from the list if already created
+
+![Select existing EA Token from list](https://media.chartsconnect.com/uploads/howitworks/1772864559854-bfbef798-7516-410a-8cb7-e465005c700c.jpg)
+
+4. Click **'Ok'** - Confirms the selection and returns you to the target screen
+
+![Activate Automation button](https://media.chartsconnect.com/uploads/howitworks/1772864742533-f7427e8e-3e70-4906-a41f-01ec72d2d6e8.jpg)
+
+5. Click **'Activate Automation'** - This confirms your target and advances to Step 4
+
+
+### Install Expert Advisor (EA) for MT5
+
+**One-time MetaTrader 5 setup to enable automated trading**
+
+Step 4 is a two-part process (Sub-step 1 and Sub-step 2) shown via a numbered indicator at the top of the dialog. This step installs the Charts Connect bridge into your MetaTrader 5 terminal.
+
+**Sub-Step 4.1 — MetaTrader 5 Setup Guide:**
+
+This guide will walk you through setting up the Charts Connect Expert Advisor (EA) on your MetaTrader 5 platform.
+
+1. **Download the EA File** - Click **'Download EA (v2.1.0)'** to download the Charts Connect package to your computer
+
+2. **Access the Experts Folder**
+   - In the upper-left corner of your MetaTrader 5 platform, click **File → Open Data Folder**
+
+    ![Open Data Folder](https://media.chartsconnect.com/uploads/howitworks/1773053764318-416466e1-a44a-47bd-886c-76a64b63d61a.png)
+
+   - In the Data Folder that opens, click into the **MQL5** folder
+   - Inside the MQL5 folder, click into the **Experts** folder
+
+    ![Expert folder](https://media.chartsconnect.com/uploads/howitworks/1773053951709-7dfcb45f-0912-4d59-970b-29e2ce52bab7.png)
+
+3. **Add Charts Connect Files to the Experts Folder**
+   - In your Experts folder, extract the contents of the .zip file you downloaded in Step 1
+
+    ![Experts folder location](https://media.chartsconnect.com/uploads/howitworks/1773054129122-270d8753-ef6a-4a75-bb76-58f6d4c9a03a.png)
+
+   - Ensure the following files are placed directly into the Experts folder:
+     - `ChartsConnect_AlertBased.ex5`
+     - `ChartsConnect_Normal.ex5`
+     - `ChartsConnect_Simple.ex5`
+     - `ChartsConnect_CustomLayering.ex5`
+     - `ChartsConnect_DynamicLayering.ex5`
+     - `DLL\chartsconnectlib.dll`
+     - `DLL\libcrypto-3-x64.dll`
+     - `DLL\libssl-3-x64.dll`
+     - `DLL\libwebsockets.dll`
+     - Any additional library files included in the package
+
+     ![ChartsConnect Extratcted](https://media.chartsconnect.com/uploads/howitworks/1773054545810-441e85d6-889b-467f-9626-559dcda0e978.jpeg)
+
+     ![ChartsConnect DLL](https://media.chartsconnect.com/uploads/howitworks/1773054643712-54525d70-ecf9-4230-9b8c-124ef89ca2b4.png)
+
+4. **Allow Algorithmic Trading and DLL Imports**
+   - At the top of your MetaTrader 5 platform, click **Tools → Options**
+
+    ![Tools option](https://media.chartsconnect.com/uploads/howitworks/1773054807810-b5ca6913-1e5f-421d-8381-5b9e9c5af4a5.png)
+
+   - Go to the **Expert Advisors** tab
+
+    ![Expert Advisors tab](https://media.chartsconnect.com/uploads/howitworks/1773054904535-3d9d9cb7-52ab-4ac0-a2c7-eaf7c32f41cd.png)
+
+   - Tick **'Allow Algorithmic Trading'** and **'Allow DLL imports'**
+   - Click **OK**
+
+5. **Enable Algo Trading**
+   - In the MetaTrader 5 toolbar (at the top of the terminal), locate the **Algo Trading** button
+
+    ![Algo Trading button](https://media.chartsconnect.com/uploads/howitworks/1773054995120-9cd071e7-f79e-492b-93e5-cc3e8da5d9d2.png)
+
+   - If the button is red, click it to enable algorithmic trading
+   - The button should turn green, indicating it's active
+
+6. **Attach Charts Connect EA to a Chart**
+   - Open the Navigator panel in MetaTrader 5 by pressing **Ctrl+N** (or by clicking **View → Navigator**)
+
+    ![Navigator](https://media.chartsconnect.com/uploads/howitworks/1773055175087-743655ea-b509-42cb-aedf-60aba50b9cf9.jpeg)
+
+   - In the Navigator panel, right-click on **Expert Advisors**
+   - Click **Refresh**
+   - Locate the **Charts Connect MT5 EA** in the list, right-click on it, and select **'Attach to Chart'**
+   - Choose any chart (e.g., XAUUSD M15)
+
+   ![Attach to Chart](https://media.chartsconnect.com/uploads/howitworks/1773055364091-b78ff623-d999-4afc-a1b0-acaf2efeef48.png)
+
+> [!NOTE]
+>
+> **Do I need to attach the Charts Connect EA to every chart if I want to trade multiple symbols?**
+>
+> Yes, Charts Connect works on a per-symbol basis. Each instance of the EA monitors and executes trades only for the symbol of the chart to which it's attached.
+>
+> **Example Setup:**
+> - Attach Charts Connect EA to the EURUSD chart → trades EURUSD signals
+> - Attach Charts Connect EA to the GBPUSD chart → trades GBPUSD signals
+> - Attach Charts Connect EA to the XAUUSD chart → trades XAUUSD signals
+>
+> Each EA instance maintains its own connection, dashboard, and alert queue for its specific symbol. You can use any timeframe for the chart - the timeframe doesn't affect signal reception, only the symbol matters.
+
+7. **Configure EA Settings**
+   - A properties window for the EA will appear
+   - Under the **Common** tab, ensure **Allow Algo Trading** is ticked
+
+    ![Algo tarding ticked](https://media.chartsconnect.com/uploads/howitworks/1773055662630-abd0826f-98e5-41b0-b7ac-a27bc863db56.png)
+
+   - Under the **Dependencies** tab, ensure **Allow DLL imports** is ticked
+
+    ![DLL ticked](https://media.chartsconnect.com/uploads/howitworks/1773055752835-3e0a01eb-1fd3-4a40-8983-475df9db2b83.png)
+
+
+8. **Input Your Token Key and Configuration**
+   - Open the **Inputs** tab in the EA properties window
+   - Enter your **Username/Email** in the Username field
+   - Paste your **Token** into the Token field
+
+    ![Token Configuration](https://media.chartsconnect.com/uploads/howitworks/1773055993060-cef51c58-2c67-4dbd-8126-92faf9cb5fee.png)
+
+   - Click **OK** - The EA will now attempt to establish a connection
+
+> [!TIP]
+>
+> **Can I use my Charts Connect license on different trading accounts?**
+>
+> Yes, absolutely! Charts Connect provides flexible licensing. This means you're free to connect to any trading account you choose – whether it's Demo or Live, or even a Prop account. Just ensure you're not exceeding your license's concurrent connection limit.
+
+9. **Verify Connection Status**
+   - Navigate to the **Toolbox** panel at the bottom of MT5 (press **Ctrl+T** if hidden)
+   - Click on the **Experts** tab
+   - Look for connection confirmation messages from Charts Connect EA
+
+    ![connection confirmation messages](https://media.chartsconnect.com/uploads/howitworks/1773056163524-a1d7e954-5ec3-4196-86d9-5344b88d7265.png)
+
+   - You should see messages like:
+     - "Charts Connect EA initialized successfully"
+     - "WebSocket connection established"
+     - "Connected to Charts Connect server"
+
+10. **Understanding the Dashboard**
+    - Once connected, the Charts Connect EA will display a modern dashboard on your chart showing:
+      - **Connection Status:** Real-time WebSocket connection indicator
+      - **AI Validation Scores:** Probability scores for incoming signals (if enabled)
+      - **Alert Queue:** Pending signals awaiting review or execution
+      - **Execution Controls:** Manual execution buttons for queued alerts
+
+![Confirm Installation](https://media.chartsconnect.com/uploads/howitworks/1772864966895-321fc888-50c9-4fc0-aa7a-8c4406f6b4b6.jpg)
+
+11. Click **'I've Installed It'** - Confirm installation and proceed to Sub-step 4.2
+
+> [!NOTE]
+>
+> **All done with the MT5 setup!**
+>
+> Next, let's try sending a few test signals to confirm your setup is running smoothly. Check out our Testing Your Connection guide to learn how to send test alerts from TradingView or other sources.
+
+**Troubleshooting EA Connection Issues:**
+> [!WARNING]
+>
+>If your EA is not connecting:
+>- Verify your Email/Token is correct
+>- Check that Algo Trading is enabled (green button in toolbar)
+>- Ensure DLL imports are allowed in Options
+>- Check the Experts tab for error messages
+>- Verify your firewall isn't blocking the connection
+
+**Sub-Step 4.2 — Configure Your Connection Token:**
+
+After confirming EA installation, you will be shown your unique Connection Token in a highlighted yellow box:
+
+![Connection Token](https://media.chartsconnect.com/uploads/howitworks/1772865199374-ad56d6b2-1532-42a6-93e4-2b41bb09b10e.jpg)
+
+Copy this token and paste it into the EA settings when you add it to your chart.
+
+1. **Copy the token** - Click the copy icon next to the token string, or manually select and copy it
+2. **Open MetaTrader 5** - Switch to your MT5 terminal
+3. **Open EA Properties** - Double-click the EA on the chart, or right-click → Properties
+4. **Paste the token** - In the EA Settings/Inputs tab, paste the token into the designated field
+5. **Enable AutoTrading** - Click OK and ensure the AutoTrading button in MT5 toolbar is green/active
+6. Click **'I've Done This Step'** - Confirms the token has been applied 
+
+**EA Setup Confirmation Screen:**
+
+![EA Setup Confirmation](https://media.chartsconnect.com/uploads/howitworks/1772865615084-1c4d4c73-2a82-49ba-8be6-655e15abb1d4.jpg)
+
+After completing both sub-steps, the dialog shows a green confirmation banner
+
+### Automation Active — Await MetaTrader Connection
+
+**Final verification of the live EA link**
+
+Step 5 is the final stage. Charts Connect listens for an incoming connection from your MetaTrader EA. The status indicator shows orange ('Almost There') while waiting.
+
+![final stage verification](https://media.chartsconnect.com/uploads/howitworks/1772865790189-a0c81bac-57c1-4a91-af0e-407a1cd65a72.jpg)
+
+**Live Status Details:**
+
+- **Automation Name:** Smart Money Flow Cloud (Pullback Strategy) - XAUUSD/M15/Blueberry
+- **Strategy Logic:** Smart Money Flow Cloud (Pullback Strategy)
+- **Target Account:** Forex
+- **Connection Status:** Listening for EA connection... (spinner shown)
+
+**Success! Your Trade Signal Is Live.**
+
+Your strategy is now communicating with your MT5 terminal.
+
+![Connection Success](https://media.chartsconnect.com/uploads/howitworks/1773057290068-76156a0b-1284-4011-adc4-8fad32a5ed81.jpeg)
+
+**Connected Status Details:**
+
+- **Automation Name:** Smart Money Flow Cloud (Pullback Strategy) - XAUUSD/M15/Blueberry
+- **Strategy Logic:** Smart Money Flow Cloud (Pullback Strategy)
+- **Target Account:** Forex
+- **Connection Status:** Connected ✅
+
+</Steps>
+
+## Troubleshooting
+
+> [!WARNING]
+>
+> **If Connection Does Not Establish**
+>
+> If your EA doesn't connect after a few minutes, try these steps:
+>
+> 1. **Verify AutoTrading is ON** - Check the AutoTrading button in MT5 is highlighted/green
+> 2. **Confirm EA is on chart** - The EA must be dragged onto the correct chart (XAUUSD M15)
+> 3. **Verify token is correct** - Re-check that the pasted token matches exactly (no extra spaces)
+> 4. **Check internet connection** - Both your computer and Charts Connect need active internet
+> 5. **Click 'Troubleshoot Setup'** - Use the troubleshoot button in the dialog for guided diagnostics
+> 6. **Click 'Open Dashboard'** - Returns to the main Dashboard to monitor connection status
+
+![Dashboard](https://media.chartsconnect.com/uploads/howitworks/1772865912449-eb6a761a-614d-4f3c-9159-cf8b76c285c8.jpg)
+
+---
+
+>**Congratulations!🎉🎉** Once the connection is established, your automation is live and ready to execute trades automatically based on your selected strategy.
