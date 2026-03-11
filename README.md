@@ -1,8 +1,25 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Prerequisites
+
+- [XAMPP](https://www.apachefriends.org/download.html) - Required for running this project
+- Node.js (v18 or higher)
+
 ## Getting Started
 
-First, run the development server:
+1. Install and start XAMPP
+2. Clone the repository:
+```bash
+git clone https://github.com/pjn12062003-lab/charts-connect-docs.git
+cd charts-connect-docs
+```
+
+3. Install dependencies:
+```bash
+npm install
+```
+
+4. Run the development server:
 
 ```bash
 npm run dev

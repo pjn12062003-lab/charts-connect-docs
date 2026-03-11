@@ -7,6 +7,16 @@ description: Complete step-by-step guide to set up your first trading automation
 
 This guide walks you through creating your first automated trading setup with Charts Connect. Follow each step carefully to connect your TradingView strategies to your MetaTrader 5 account.
 
+> [!IMPORTANT]
+>
+> **What You'll Need**
+>
+> Before starting, make sure you have:
+> - An active Charts Connect account
+> - MetaTrader 5 installed and running
+> - Access to your Charts Connect Dashboard
+> - About 15-20 minutes to complete the setup
+
 > [!NOTE]
 >
 > **PRE-STEP: Verify Your Dashboard**
@@ -60,7 +70,12 @@ Step 3 of 5 asks you to select one or more target destinations for your trade si
 
 **Target Selection Steps:**
 
-1. Review available targets - Crypto, Discord, Forex, Telegram are shown as checkboxes
+1. Review available targets:
+   - 🔗 **Crypto** - Cryptocurrency exchange accounts
+   - 💬 **Discord** - Discord channel notifications
+   - ✅ **Forex** - MetaTrader Forex accounts (Select this)
+   - 📨 **Telegram** - Telegram notifications
+
 2. Check the **Forex** checkbox
 3. A sub-label **'Create EA Token name'** appears beneath it
 4. Click **Create EA Token** button
@@ -115,16 +130,22 @@ This guide will walk you through setting up the Charts Connect Expert Advisor (E
     ![Experts folder location](https://media.chartsconnect.com/uploads/howitworks/1773054129122-270d8753-ef6a-4a75-bb76-58f6d4c9a03a.png)
 
    - Ensure the following files are placed directly into the Experts folder:
-     - `ChartsConnect_AlertBased.ex5`
-     - `ChartsConnect_Normal.ex5`
-     - `ChartsConnect_Simple.ex5`
-     - `ChartsConnect_CustomLayering.ex5`
-     - `ChartsConnect_DynamicLayering.ex5`
-     - `DLL\chartsconnectlib.dll`
-     - `DLL\libcrypto-3-x64.dll`
-     - `DLL\libssl-3-x64.dll`
-     - `DLL\libwebsockets.dll`
-     - Any additional library files included in the package
+
+   <FileTree>
+     <FileTree.Folder name="Experts" defaultOpen>
+       <FileTree.File name="ChartsConnect_AlertBased.ex5" />
+       <FileTree.File name="ChartsConnect_Normal.ex5" />
+       <FileTree.File name="ChartsConnect_Simple.ex5" />
+       <FileTree.File name="ChartsConnect_CustomLayering.ex5" />
+       <FileTree.File name="ChartsConnect_DynamicLayering.ex5" />
+       <FileTree.Folder name="DLL" defaultOpen>
+         <FileTree.File name="chartsconnectlib.dll" />
+         <FileTree.File name="libcrypto-3-x64.dll" />
+         <FileTree.File name="libssl-3-x64.dll" />
+         <FileTree.File name="libwebsockets.dll" />
+       </FileTree.Folder>
+     </FileTree.Folder>
+   </FileTree>
 
      ![ChartsConnect Extratcted](https://media.chartsconnect.com/uploads/howitworks/1773054545810-441e85d6-889b-467f-9626-559dcda0e978.jpeg)
 
@@ -310,4 +331,7 @@ Your strategy is now communicating with your MT5 terminal.
 
 ---
 
->**Congratulations!🎉🎉** Once the connection is established, your automation is live and ready to execute trades automatically based on your selected strategy.
+## 🎉 Success!
+
+> **Congratulations!** Once the connection is established, your automation is live and ready to execute trades automatically based on your selected strategy.
+
